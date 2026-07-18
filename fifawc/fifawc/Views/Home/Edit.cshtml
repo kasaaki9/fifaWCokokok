@@ -1,0 +1,159 @@
+﻿@model fifawc.Models.Player
+
+@{
+    ViewData["Title"] = "Sửa cầu thủ";
+}
+
+<link rel="stylesheet" href="~/css/create.css" asp-append-version="true" />
+
+<div class="form-box">
+
+    <h1>⚽ Sửa CẦU THỦ</h1>
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input asp-for="Id" type="hidden" />
+        <div class="group">
+            <label>Tên cầu thủ</label>
+            <input asp-for="Name" />
+        </div>
+
+        <div class="group">
+            <label>Vị trí</label>
+
+
+
+            <select asp-for="Position">
+                <option>ST</option>
+                <option>LW</option>
+                <option>RW</option>
+                <option>CAM</option>
+                <option>CM</option>
+                <option>CDM</option>
+                <option>LB</option>
+                <option>RB</option>
+                <option>CB</option>
+                <option>GK</option>
+            </select>
+
+        </div>
+
+        <div class="group">
+            <label>OVR</label>
+            <input asp-for="OVR" type="number" />
+        </div>
+
+        <h3>Thống kê</h3>
+
+        <div class="stats">
+
+            <div class="group">
+                <label>Số trận</label>
+                <input asp-for="Matches" type="number" min="0" />
+            </div>
+
+            <div class="group">
+                <label>Bàn thắng</label>
+                <input asp-for="Goals" type="number" min="0" />
+            </div>
+
+        </div>
+
+        <h3>Chỉ số</h3>
+
+        <div class="stats">
+
+            <div class="group">
+                <label>PAC</label>
+                <input asp-for="PAC" type="number" />
+            </div>
+
+            <div class="group">
+                <label>SHO</label>
+                <input asp-for="SHO" type="number" />
+            </div>
+
+            <div class="group">
+                <label>PAS</label>
+                <input asp-for="PAS" type="number" />
+            </div>
+
+            <div class="group">
+                <label>DRI</label>
+                <input asp-for="DRI" type="number" />
+            </div>
+
+            <div class="group">
+                <label>DEF</label>
+                <input asp-for="DEF" type="number" />
+            </div>
+
+            <div class="group">
+                <label>PHY</label>
+                <input asp-for="PHY" type="number" />
+            </div>
+
+        </div>
+
+        <h3>Chỉ số ẩn</h3>
+
+        <div class="stats">
+
+            <div class="group">
+                <label>Vision</label>
+                <input asp-for="Vision" type="number" min="1" max="99" />
+            </div>
+
+            <div class="group">
+                <label>Finishing</label>
+                <input asp-for="Finishing" type="number" min="1" max="99" />
+            </div>
+
+            <div class="group">
+                <label> Acceleration</label>
+                <input asp-for="Acceleration" type="number" min="1" max="99" />
+            </div>
+
+            <div class="group">
+                <label>Long Pass</label>
+                <input asp-for="LongPass" type="number" min="1" max="99" />
+            </div>
+
+            <div class="group">
+                <label>Positioning</label>
+                <input asp-for="Positioning" type="number" min="1" max="99" />
+            </div>
+
+            <div class="group">
+                <label>Control</label>
+                <input asp-for="Control" type="number" min="1" max="99" />
+            </div>
+
+        </div>
+
+        <div class="group">
+
+            <label>Ảnh cầu thủ</label>
+
+            <input type="file" name="fileAnh" accept="image/*" />
+
+        </div>
+
+        <div class="button-box">
+
+            <button class="save" type="submit">
+
+                Lưu cầu thủ
+
+            </button>
+
+            <a asp-action="Admin" class="cancel">
+
+                Quay lại
+
+            </a>
+
+        </div>
+
+    </form>
+
+</div>

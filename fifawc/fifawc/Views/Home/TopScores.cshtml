@@ -1,0 +1,87 @@
+﻿@model List<fifawc.Models.Player>
+
+@{
+    ViewData["Title"] = "Vua phá lưới";
+}
+
+<div class="admin">
+
+    <div class="title">
+        <h1>🏆 BẢNG XẾP HẠNG VUA PHÁ LƯỚI</h1>
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Hạng</th>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Vị trí</th>
+                <th>Trận</th>
+                <th>Bàn</th>
+                <th>OVR</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @{
+                int rank = 1;
+            }
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+
+                        @if (rank == 1)
+                        {
+                            <span>🥇</span>
+                        }
+                        else if (rank == 2)
+                        {
+                            <span>🥈</span>
+                        }
+                        else if (rank == 3)
+                        {
+                            <span>🥉</span>
+                        }
+                        else
+                        {
+                            @rank
+                        }
+
+                    </td>
+
+                    <td>
+                        <img src="~/images/@item.Image">
+                    </td>
+
+                    <td>@item.Name</td>
+
+                    <td>@item.Position</td>
+
+                    <td>@item.Matches</td>
+
+                    <td>
+                        <strong style="color:#FFD54F;font-size:22px;">
+                            @item.Goals
+                        </strong>
+                    </td>
+
+                    <td>@item.OVR</td>
+
+                </tr>
+
+                rank++;
+            }
+
+        </tbody>
+
+    </table>
+
+</div>
