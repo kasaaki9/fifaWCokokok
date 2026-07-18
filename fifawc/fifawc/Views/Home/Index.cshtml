@@ -1,0 +1,89 @@
+﻿@model List<fifawc.Models.Player>
+
+@{
+    ViewData["Title"] = "Football Rating";
+}
+
+<div class="hero">
+
+    <h1>FOOTBALL RATING</h1>
+
+    <p>
+        Chỉ số các cầu thủ của Team Double Tu Ti
+    </p>
+
+</div>
+
+<div class="player-container">
+
+    @foreach (var item in Model)
+    {
+        <div class="player-card">
+
+            <div class="top">
+
+                <div class="ovr">
+
+                    @item.OVR
+
+                </div>
+
+                <div class="position">
+
+                    @item.Position
+
+                </div>
+
+            </div>
+
+            <img src="~/images/@item.Image" asp-append-version="true">
+
+            <h2>@item.Name</h2>
+
+            <div class="stats">
+
+                <div>
+
+                    <span>PAC</span>
+                    <strong>@item.PAC</strong>
+                </div>
+
+                <div>
+                    <span>SHO</span>
+                    <strong>@item.SHO</strong>
+                </div>
+
+                <div>
+                    <span>PAS</span>
+                    <strong>@item.PAS</strong>
+                </div>
+
+                <div>
+                    <span>DRI</span>
+                    <strong>@item.DRI</strong>
+                </div>
+
+                <div>
+                    <span>DEF</span>
+                    <strong>@item.DEF</strong>
+                </div>
+
+                <div>
+                    <span>PHY</span>
+                    <strong>@item.PHY</strong>
+                </div>
+
+            </div>
+
+            <a asp-action="Details"
+               asp-route-id="@item.Id"
+               class="detail-btn">
+
+                Xem chi tiết
+
+            </a>
+
+        </div>
+    }
+
+</div>

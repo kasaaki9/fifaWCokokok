@@ -1,0 +1,162 @@
+﻿@model fifawc.Models.Player
+
+@{
+    ViewData["Title"] = "Chi tiết cầu thủ";
+}
+
+<link rel="stylesheet" href="~/css/details.css" asp-append-version="true" />
+
+<div class="details-container">
+
+    <div class="left-card">
+
+        <div class="rating">
+            @Model.OVR
+        </div>
+
+        <img src="~/images/@Model.Image" />
+
+        <h1>@Model.Name</h1>
+
+        <span>@Model.Position</span>
+
+    </div>
+
+    <div class="record-box">
+
+        <div class="record-item">
+            <span>🏟️ Số trận</span>
+            <h2>@Model.Matches</h2>
+        </div>
+
+        <div class="record-item">
+            <span>⚽ Bàn thắng</span>
+            <h2>@Model.Goals</h2>
+        </div>
+
+    </div>
+
+    <div class="right-card">
+
+        <h2>Thông tin cầu thủ</h2>
+
+        <div class="stats">
+
+            <div>
+                <label>PAC</label>
+
+                <div class="bar">
+                    <div style="width:@Model.PAC%"></div>
+                </div>
+
+                <span>@Model.PAC</span>
+
+            </div>
+
+            <div>
+
+                <label>SHO</label>
+
+                <div class="bar">
+                    <div style="width:@Model.SHO%"></div>
+                </div>
+
+                <span>@Model.SHO</span>
+
+            </div>
+
+            <div>
+
+                <label>PAS</label>
+
+                <div class="bar">
+                    <div style="width:@Model.PAS%"></div>
+                </div>
+
+                <span>@Model.PAS</span>
+
+            </div>
+
+            <div>
+
+                <label>DRI</label>
+
+                <div class="bar">
+                    <div style="width:@Model.DRI%"></div>
+                </div>
+
+                <span>@Model.DRI</span>
+
+            </div>
+
+            <div>
+
+                <label>DEF</label>
+
+                <div class="bar">
+                    <div style="width:@Model.DEF%"></div>
+                </div>
+
+                <span>@Model.DEF</span>
+
+            </div>
+
+            <div>
+
+                <label>PHY</label>
+
+                <div class="bar">
+                    <div style="width:@Model.PHY%"></div>
+                </div>
+
+                <span>@Model.PHY</span>
+
+            </div>
+
+        </div>
+
+        <h2>Chỉ số ẩn</h2>
+
+        <div class="grid">
+
+            <div>
+                <strong>Vision</strong>
+                <h3>@Model.Vision</h3>
+            </div>
+
+            <div>
+                <strong>Finishing</strong>
+                <h3>@Model.Finishing</h3>
+            </div>
+
+            <div>
+                <strong>Acceleration</strong>
+                <h3>@Model.Acceleration</h3>
+            </div>
+
+            <div>
+                <strong>Long Pass</strong>
+                <h3>@Model.LongPass</h3>
+            </div>
+
+            <div>
+                <strong>Positioning</strong>
+                <h3>@Model.Positioning</h3>
+            </div>
+
+            <div>
+                <strong>Control</strong>
+                <h3>@Model.Control</h3>
+            </div>
+
+        </div>
+
+        <a asp-action="Index" class="back">
+
+            ← Quay lại
+
+        </a>
+
+    </div>
+
+</div>
